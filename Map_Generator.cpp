@@ -49,7 +49,7 @@ void onMouseHandle(int event, int x, int y, int flags, void* params)
     }
 }
 
-int main(int argc, char** argv) {
+int test_map_generator() {
     cv::Mat img( MAP_HEIGHT , MAP_WIDTH, CV_8UC3,
                   cv::Scalar(255, 255, 255));
 

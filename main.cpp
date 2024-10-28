@@ -6,7 +6,7 @@
 #include <fstream>
 #include <sstream>
 #include <cassert>
-
+int test_map_generator();
 
 // remember to comment find opencv package in the CMakeLists.txt if turn OPENCVDISPLAY off.
 // #define OPENCVDISPLAY 
@@ -91,10 +91,10 @@ Mat2i dataReader(std::string &filename){
 
 }
 
-int main(int, char**) {
+int test_1() {
     FindContours fc;
 
-    
+ 
 
     #ifdef OPENCVDISPLAY
         std::string name        = "poly";
@@ -143,5 +143,35 @@ int main(int, char**) {
         fc.Display();
     #endif
 
+    return 0;
+}
+
+
+int main()
+{
+    while (true)
+    {
+        std::cout << "0、退出测试" << std::endl;
+        std::cout << "1、测试1" << std::endl;
+        std::cout << "2、test_map_generator" << std::endl;
+        std::cout << "请输入您的选择";
+        int nChoise = -1;
+        std::cin >> nChoise;
+        int ret = -1;
+        switch (nChoise)
+        {
+        case 0:
+            std::cout << __FUNCTION__ << " | 成功退出" << std::endl;
+            return 0;
+        case 1:
+            ret = test_1();
+            break;
+        case 2:
+            ret = test_map_generator();
+            break;
+        default:
+            break;
+        }
+    }
     return 0;
 }
